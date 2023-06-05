@@ -40,7 +40,6 @@ namespace ThuVien.Views
                 this.HeThongPage.Visible = false;
                 this.QuanLyPage.Visible = false;
                 this.TraCuuPage.Visible = false;
-                this.ThongKePage.Visible= false;
                 this.btnChangePassword.Enabled = false;
                 this.btnExit.Enabled = false;
                 this.btnLogin.Enabled = true;
@@ -69,7 +68,6 @@ namespace ThuVien.Views
                     this.HeThongPage.Visible = true;
                     this.QuanLyPage.Visible = true;
                     this.TraCuuPage.Visible = true;
-                    this.ThongKePage.Visible = true;
                     this.QuanLyGroup.Visible = true;
                     this.DocGiaGroup.Visible = false;
                     this.btnBorrowBookList.Enabled = true;
@@ -123,7 +121,6 @@ namespace ThuVien.Views
             this.HeThongPage.Visible = false;
             this.QuanLyPage.Visible = false;
             this.TraCuuPage.Visible = false;
-            this.ThongKePage.Visible = false;
             this.btnChangePassword.Enabled = false;
             this.btnExit.Enabled = false;
         }
