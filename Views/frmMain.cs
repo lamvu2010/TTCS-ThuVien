@@ -388,5 +388,20 @@ namespace ThuVien.Views
                 f.Show();
             }
         }
+
+        private void btnTacGia_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form f = this.checkExists(typeof(frmTacGia));
+            if (f != null)
+            {
+                f.Activate();
+            }
+            else
+            {
+                f = new frmTacGia();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
     }
 }

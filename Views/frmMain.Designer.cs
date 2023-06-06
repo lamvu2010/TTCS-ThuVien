@@ -51,6 +51,7 @@
             this.btnRestore = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.btnRestore2 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnTacGia = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -101,10 +102,11 @@
             this.btnBackup,
             this.btnRestore,
             this.barButtonItem1,
-            this.btnRestore2});
+            this.btnRestore2,
+            this.btnTacGia});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.Margin = new System.Windows.Forms.Padding(8);
-            this.ribbon.MaxItemId = 32;
+            this.ribbon.MaxItemId = 33;
             this.ribbon.Name = "ribbon";
             this.ribbon.OptionsMenuMinWidth = 1360;
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -292,6 +294,17 @@
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.btnRestore2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRestore2_ItemClick);
             // 
+            // btnTacGia
+            // 
+            this.btnTacGia.Caption = "Tác giả";
+            this.btnTacGia.Id = 32;
+            this.btnTacGia.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTacGia.ImageOptions.Image")));
+            this.btnTacGia.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnTacGia.ImageOptions.LargeImage")));
+            this.btnTacGia.Name = "btnTacGia";
+            this.btnTacGia.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnTacGia.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTacGia_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -370,8 +383,9 @@
             // QuanLyDocGiaGroup
             // 
             this.QuanLyDocGiaGroup.ItemLinks.Add(this.btnReader);
+            this.QuanLyDocGiaGroup.ItemLinks.Add(this.btnTacGia);
             this.QuanLyDocGiaGroup.Name = "QuanLyDocGiaGroup";
-            this.QuanLyDocGiaGroup.Text = "Độc giả";
+            this.QuanLyDocGiaGroup.Text = "Nhân vật";
             // 
             // HeThongPage
             // 
@@ -503,5 +517,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup BRGroup;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarButtonItem btnRestore2;
+        private DevExpress.XtraBars.BarButtonItem btnTacGia;
     }
 }
