@@ -19,7 +19,7 @@ namespace ThuVien
         
         public static SqlConnection conn = new SqlConnection();
         public static string connString = null;  
-        public static String serverName = "ADMIN";
+        public static String serverName = "DELL";
         public static String database = "ThuVien";
         public static String login = "";
         public static String userName = "";
