@@ -466,6 +466,7 @@ namespace ThuVien.Views
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.BaoMuonTableAdapter = null;
+            this.tableAdapterManager.BaoPHTableAdapter = null;
             this.tableAdapterManager.BaoTVTableAdapter = null;
             this.tableAdapterManager.ChiTietTacGiaTableAdapter = null;
             this.tableAdapterManager.DocGiaTableAdapter = null;
@@ -775,7 +776,7 @@ namespace ThuVien.Views
             // 
             // taiLieu_SachTableAdapter
             // 
-            //this.taiLieu_SachTableAdapter.ClearBeforeFill = true;
+            this.taiLieu_SachTableAdapter.ClearBeforeFill = true;
             // 
             // panelSachTV
             // 
