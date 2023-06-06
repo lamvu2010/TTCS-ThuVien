@@ -51,6 +51,7 @@
             this.btnBackup = new DevExpress.XtraBars.BarButtonItem();
             this.btnRestore = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnRestore2 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -73,7 +74,6 @@
             this.NHOM = new System.Windows.Forms.ToolStripStatusLabel();
             this.TEN = new System.Windows.Forms.ToolStripStatusLabel();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.btnRestore2 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
@@ -222,6 +222,7 @@
             this.btnBook.Name = "btnBook";
             this.btnBook.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnBook.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBook_ItemClick);
             // 
             // btnNews
             // 
@@ -293,6 +294,16 @@
             // 
             this.barButtonItem1.Id = 30;
             this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // btnRestore2
+            // 
+            this.btnRestore2.Caption = "Phục hồi xa";
+            this.btnRestore2.Id = 31;
+            this.btnRestore2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnRestore2.ImageOptions.SvgImage")));
+            this.btnRestore2.Name = "btnRestore2";
+            this.btnRestore2.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnRestore2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRestore2_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -455,16 +466,6 @@
             // xtraTabbedMdiManager1
             // 
             this.xtraTabbedMdiManager1.MdiParent = this;
-            // 
-            // btnRestore2
-            // 
-            this.btnRestore2.Caption = "Phục hồi xa";
-            this.btnRestore2.Id = 31;
-            this.btnRestore2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem2.ImageOptions.SvgImage")));
-            this.btnRestore2.Name = "btnRestore2";
-            this.btnRestore2.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.btnRestore2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRestore2_ItemClick);
             // 
             // frmMain
             // 

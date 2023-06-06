@@ -112,7 +112,7 @@ namespace ThuVien.Views
 
         private void btnAccess_Click(object sender, EventArgs e)
         {
-            soThe = Int32.Parse(txtSoThe.Text);
+            soThe = int.Parse(txtSoThe.Text);
             SqlDataReader myReader = Program.ExecSqlDataReader("EXEC SP_TimDocGia '" + soThe + "'");
             if (myReader != null && myReader.Read())
             {

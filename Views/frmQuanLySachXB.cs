@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -20,14 +21,6 @@ namespace ThuVien.Views
         public frmQuanLySachXB()
         {
             InitializeComponent();
-        }
-
-        private void sachXBBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.bdsSachXB.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.thuVienDataSet);
-
         }
 
         private void frmQuanLySachXB_Load(object sender, EventArgs e)
@@ -51,10 +44,6 @@ namespace ThuVien.Views
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (!action.Equals("Them"))
-            {
-                return;
-            }
             try
             {
                 if(cmbTuaSach.SelectedValue != null)
@@ -62,7 +51,7 @@ namespace ThuVien.Views
                     txtMaSach.Text = cmbTuaSach.SelectedValue.ToString();
                     String sql = string.Format("Select LAN FROM SACHXB WHERE MASACH = '{0}'", txtMaSach.Text);
                     SqlDataReader reader = Program.ExecSqlDataReader(sql);
-                    int val = 0;
+                    int val = 1;
                     while (reader.Read())
                     {
                         if (reader.GetInt32(0) >= val)
@@ -76,7 +65,7 @@ namespace ThuVien.Views
             }
             catch(Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message,"Lỗi");
             }
         }
 
@@ -84,10 +73,11 @@ namespace ThuVien.Views
         private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             action = "Them";
+            String masxb = "";
             SqlDataReader reader = Program.ExecSqlDataReader("Select dbo.AUTO_MASXB()");
             if (reader.Read())
             {
-                txtMaSachXB.Text = reader.GetString(0);
+                masxb = reader.GetString(0);
                 reader.Close();
             }
             else
@@ -103,6 +93,7 @@ namespace ThuVien.Views
             btnUndo.Enabled = btnLuu.Enabled = true;
             position = bdsSachXB.Position;
             bdsSachXB.AddNew();
+            txtMaSachXB.Text = masxb;
             cbCD.Checked = false;
             cmbTuaSach.SelectedIndex = 0;
             txtLan.Value = 1;
@@ -193,9 +184,9 @@ namespace ThuVien.Views
                 MessageBox.Show("Vui lòng điền giá sách","Lỗi");
                 return;
             }
-            if(txtNam.Text.Length == 0)
+            if(!Regex.IsMatch(txtNam.Text, @"^\d{4}$"))
             {
-                MessageBox.Show("Vui lòng điền năm xuất bản","Lỗi");
+                MessageBox.Show("Vui lòng kiểm tra lại năm xuất bản","Lỗi");
                 return;
             }
             if (action.Equals("Them"))
@@ -212,6 +203,11 @@ namespace ThuVien.Views
                    }
                 }
                 reader.Close();
+            }
+            if(txtSLNhap.Value < bdsSachTV.Count)
+            {
+                MessageBox.Show("Số lượng nhập đang nhỏ hơn số lượng sách thư viện","Lỗi");
+                return;
             }
             try
             {
