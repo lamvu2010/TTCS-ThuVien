@@ -52,21 +52,21 @@
             this.TacGiaTableAdapter = new ThuVien.ThuVienDataSetTableAdapters.TacGiaTableAdapter();
             this.tableAdapterManager = new ThuVien.ThuVienDataSetTableAdapters.TableAdapterManager();
             this.ChiTietTacGiaTableAdapter = new ThuVien.ThuVienDataSetTableAdapters.ChiTietTacGiaTableAdapter();
-            this.tacGiaGridControl = new DevExpress.XtraGrid.GridControl();
+            this.grid = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colMATG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTEN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNAMSINH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.txtTEN = new DevExpress.XtraEditors.TextEdit();
             this.txtNAMSINH = new DevExpress.XtraEditors.TextEdit();
             this.bdsCT_TG = new System.Windows.Forms.BindingSource(this.components);
-            this.colMATG = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTEN = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colNAMSINH = new DevExpress.XtraGrid.Columns.GridColumn();
             nAMSINHLabel = new System.Windows.Forms.Label();
             tENLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ThuVienDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsTacGia)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tacGiaGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -290,17 +290,17 @@
             // 
             this.ChiTietTacGiaTableAdapter.ClearBeforeFill = true;
             // 
-            // tacGiaGridControl
+            // grid
             // 
-            this.tacGiaGridControl.DataSource = this.bdsTacGia;
-            this.tacGiaGridControl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tacGiaGridControl.Location = new System.Drawing.Point(0, 34);
-            this.tacGiaGridControl.MainView = this.gridView1;
-            this.tacGiaGridControl.MenuManager = this.barManager1;
-            this.tacGiaGridControl.Name = "tacGiaGridControl";
-            this.tacGiaGridControl.Size = new System.Drawing.Size(800, 220);
-            this.tacGiaGridControl.TabIndex = 5;
-            this.tacGiaGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.grid.DataSource = this.bdsTacGia;
+            this.grid.Dock = System.Windows.Forms.DockStyle.Top;
+            this.grid.Location = new System.Drawing.Point(0, 34);
+            this.grid.MainView = this.gridView1;
+            this.grid.MenuManager = this.barManager1;
+            this.grid.Name = "grid";
+            this.grid.Size = new System.Drawing.Size(800, 220);
+            this.grid.TabIndex = 5;
+            this.grid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
@@ -309,8 +309,38 @@
             this.colMATG,
             this.colTEN,
             this.colNAMSINH});
-            this.gridView1.GridControl = this.tacGiaGridControl;
+            this.gridView1.GridControl = this.grid;
             this.gridView1.Name = "gridView1";
+            // 
+            // colMATG
+            // 
+            this.colMATG.FieldName = "MATG";
+            this.colMATG.MinWidth = 30;
+            this.colMATG.Name = "colMATG";
+            this.colMATG.OptionsColumn.ReadOnly = true;
+            this.colMATG.Visible = true;
+            this.colMATG.VisibleIndex = 0;
+            this.colMATG.Width = 112;
+            // 
+            // colTEN
+            // 
+            this.colTEN.FieldName = "TEN";
+            this.colTEN.MinWidth = 30;
+            this.colTEN.Name = "colTEN";
+            this.colTEN.OptionsColumn.ReadOnly = true;
+            this.colTEN.Visible = true;
+            this.colTEN.VisibleIndex = 1;
+            this.colTEN.Width = 112;
+            // 
+            // colNAMSINH
+            // 
+            this.colNAMSINH.FieldName = "NAMSINH";
+            this.colNAMSINH.MinWidth = 30;
+            this.colNAMSINH.Name = "colNAMSINH";
+            this.colNAMSINH.OptionsColumn.ReadOnly = true;
+            this.colNAMSINH.Visible = true;
+            this.colNAMSINH.VisibleIndex = 2;
+            this.colNAMSINH.Width = 112;
             // 
             // panelControl1
             // 
@@ -348,43 +378,13 @@
             this.bdsCT_TG.DataMember = "FK_ChiTietTacGia_TacGia";
             this.bdsCT_TG.DataSource = this.bdsTacGia;
             // 
-            // colMATG
-            // 
-            this.colMATG.FieldName = "MATG";
-            this.colMATG.MinWidth = 30;
-            this.colMATG.Name = "colMATG";
-            this.colMATG.OptionsColumn.ReadOnly = true;
-            this.colMATG.Visible = true;
-            this.colMATG.VisibleIndex = 0;
-            this.colMATG.Width = 112;
-            // 
-            // colTEN
-            // 
-            this.colTEN.FieldName = "TEN";
-            this.colTEN.MinWidth = 30;
-            this.colTEN.Name = "colTEN";
-            this.colTEN.OptionsColumn.ReadOnly = true;
-            this.colTEN.Visible = true;
-            this.colTEN.VisibleIndex = 1;
-            this.colTEN.Width = 112;
-            // 
-            // colNAMSINH
-            // 
-            this.colNAMSINH.FieldName = "NAMSINH";
-            this.colNAMSINH.MinWidth = 30;
-            this.colNAMSINH.Name = "colNAMSINH";
-            this.colNAMSINH.OptionsColumn.ReadOnly = true;
-            this.colNAMSINH.Visible = true;
-            this.colNAMSINH.VisibleIndex = 2;
-            this.colNAMSINH.Width = 112;
-            // 
             // frmTacGia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 549);
             this.Controls.Add(this.panelControl1);
-            this.Controls.Add(this.tacGiaGridControl);
+            this.Controls.Add(this.grid);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
@@ -395,7 +395,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ThuVienDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsTacGia)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tacGiaGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
@@ -428,7 +428,7 @@
         private ThuVienDataSetTableAdapters.TacGiaTableAdapter TacGiaTableAdapter;
         private ThuVienDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraGrid.GridControl tacGiaGridControl;
+        private DevExpress.XtraGrid.GridControl grid;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraBars.BarButtonItem btnAdd;
         private DevExpress.XtraEditors.TextEdit txtTEN;

@@ -38,7 +38,13 @@ namespace ThuVien.Views
             // TODO: This line of code loads data into the 'thuVienDataSet.TacGia' table. You can move, or remove it, as needed.
             this.TacGiaTableAdapter.Connection.ConnectionString=Program.connString;
             this.TacGiaTableAdapter.Fill(this.ThuVienDataSet.TacGia);
-
+            panelControl1.Enabled = false;
+            btnAdd.Enabled = true;
+            btnEdit.Enabled = true;
+            btnDelete.Enabled = true;
+            btnRefresh.Enabled = true;
+            btnUndo.Enabled = false;
+            btnExit.Enabled = true;
         }
 
         private void panelControl1_Paint(object sender, PaintEventArgs e)
@@ -59,13 +65,7 @@ namespace ThuVien.Views
             // TODO: This line of code loads data into the 'thuVienDataSet.TacGia' table. You can move, or remove it, as needed.
             this.TacGiaTableAdapter.Connection.ConnectionString = Program.connString;
             this.TacGiaTableAdapter.Fill(this.ThuVienDataSet.TacGia);
-            panelControl1.Enabled = false;
-            btnAdd.Enabled = true;
-            btnEdit.Enabled = true;
-            btnDelete.Enabled = true;
-            btnRefresh.Enabled = true;
-            btnUndo.Enabled = false;
-            btnExit.Enabled = true;
+            
         }
 
         private void btnAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -78,6 +78,8 @@ namespace ThuVien.Views
             btnRefresh.Enabled = false;
             btnUndo.Enabled = true;
             btnExit.Enabled = true;
+            btnAdd.Enabled = false;
+            grid.Enabled = false;
         }
 
         private void btnUndo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -93,6 +95,7 @@ namespace ThuVien.Views
             btnRefresh.Enabled = true;
             btnUndo.Enabled = false;
             btnExit.Enabled = true;
+            grid.Enabled = true;
         }
 
         private void btnDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -104,12 +107,13 @@ namespace ThuVien.Views
             }
             if (MessageBox.Show("Bạn chắc chắn muốn xóa tác giả?", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                String ma = ((DataRow)bdsTacGia[bdsTacGia.Position])["MATG"].ToString();
+                String ma = ((DataRowView)bdsTacGia[bdsTacGia.Position])["MATG"].ToString();
                 try
                 {
                     bdsTacGia.RemoveCurrent();
                     TacGiaTableAdapter.Connection.ConnectionString = Program.connPublisherString;
                     TacGiaTableAdapter.Update(this.ThuVienDataSet.TacGia);
+                    MessageBox.Show("Xóa thành công");
                 }
                 catch (Exception ex)
                 {
@@ -124,11 +128,13 @@ namespace ThuVien.Views
         {
             position = bdsTacGia.Position;
             panelControl1.Enabled = true;
+            btnAdd.Enabled = false;
             btnEdit.Enabled = false;
             btnDelete.Enabled = false;
             btnRefresh.Enabled = false;
             btnUndo.Enabled = true;
             btnExit.Enabled = true;
+            grid.Enabled = false;
         }
         bool IsBirthYear(string input)
         {
@@ -167,6 +173,7 @@ namespace ThuVien.Views
                 bdsTacGia.ResetCurrentItem();
                 this.TacGiaTableAdapter.Connection.ConnectionString = Program.connPublisherString;
                 this.TacGiaTableAdapter.Update(this.ThuVienDataSet.TacGia);
+                
                 MessageBox.Show("Lưu thành công", "Thông báo");
             }
             catch (Exception ex)
@@ -181,6 +188,7 @@ namespace ThuVien.Views
             btnRefresh.Enabled = true;
             btnUndo.Enabled = false;
             btnExit.Enabled = true;
+            grid.Enabled = true;
         }
     }
 }
