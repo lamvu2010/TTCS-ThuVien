@@ -376,5 +376,20 @@ namespace ThuVien.Views
                 f.Show();
             }
         }
+
+        private void btnBook_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form f = this.checkExists(typeof(frmTuaSach));
+            if (f != null)
+            {
+                f.Activate();
+            }
+            else
+            {
+                f = new frmTuaSach();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
     }
 }
