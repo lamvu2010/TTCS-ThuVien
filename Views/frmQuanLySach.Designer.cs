@@ -546,7 +546,7 @@ namespace ThuVien.Views
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "frmQuanLySach";
-            this.Text = "frmQuanLySach";
+            this.Text = "Quản lý sách";
             this.Load += new System.EventHandler(this.frmQuanLySach_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnSach)).EndInit();
