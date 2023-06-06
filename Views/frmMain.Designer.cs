@@ -216,6 +216,7 @@
             this.btnBook.Name = "btnBook";
             this.btnBook.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnBook.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBook_ItemClick);
             // 
             // btnNews
             // 
