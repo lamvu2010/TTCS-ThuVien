@@ -39,8 +39,9 @@
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btnThem = new DevExpress.XtraBars.BarButtonItem();
-            this.btnXoa = new DevExpress.XtraBars.BarButtonItem();
             this.btnSua = new DevExpress.XtraBars.BarButtonItem();
+            this.btnXoa = new DevExpress.XtraBars.BarButtonItem();
+            this.btnTaiLai = new DevExpress.XtraBars.BarButtonItem();
             this.btnThoat = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
@@ -71,7 +72,6 @@
             this.txtID_BAO = new DevExpress.XtraEditors.TextEdit();
             this.bdsTaiLieu = new System.Windows.Forms.BindingSource(this.components);
             this.TaiLieuTableAdapter = new ThuVien.ThuVienDataSetTableAdapters.TaiLieuTableAdapter();
-            this.btnTaiLai = new DevExpress.XtraBars.BarButtonItem();
             iD_BAOLabel = new System.Windows.Forms.Label();
             sLNHAPLabel = new System.Windows.Forms.Label();
             lANLabel = new System.Windows.Forms.Label();
@@ -189,6 +189,15 @@
             this.btnThem.Name = "btnThem";
             this.btnThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThem_ItemClick);
             // 
+            // btnSua
+            // 
+            this.btnSua.Caption = "Sửa";
+            this.btnSua.Id = 2;
+            this.btnSua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.ImageOptions.Image")));
+            this.btnSua.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSua.ImageOptions.LargeImage")));
+            this.btnSua.Name = "btnSua";
+            this.btnSua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSua_ItemClick);
+            // 
             // btnXoa
             // 
             this.btnXoa.Caption = "Xóa";
@@ -198,14 +207,15 @@
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXoa_ItemClick);
             // 
-            // btnSua
+            // btnTaiLai
             // 
-            this.btnSua.Caption = "Sửa";
-            this.btnSua.Id = 2;
-            this.btnSua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.ImageOptions.Image")));
-            this.btnSua.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSua.ImageOptions.LargeImage")));
-            this.btnSua.Name = "btnSua";
-            this.btnSua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSua_ItemClick);
+            this.btnTaiLai.Caption = "Tải lại";
+            this.btnTaiLai.Id = 5;
+            this.btnTaiLai.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTaiLai.ImageOptions.Image")));
+            this.btnTaiLai.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnTaiLai.ImageOptions.LargeImage")));
+            this.btnTaiLai.Name = "btnTaiLai";
+            this.btnTaiLai.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnTaiLai.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTaiLai_ItemClick);
             // 
             // btnThoat
             // 
@@ -503,16 +513,6 @@
             // TaiLieuTableAdapter
             // 
             this.TaiLieuTableAdapter.ClearBeforeFill = true;
-            // 
-            // btnTaiLai
-            // 
-            this.btnTaiLai.Caption = "Tải lại";
-            this.btnTaiLai.Id = 5;
-            this.btnTaiLai.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.btnTaiLai.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
-            this.btnTaiLai.Name = "btnTaiLai";
-            this.btnTaiLai.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.btnTaiLai.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTaiLai_ItemClick);
             // 
             // frmNhapBaoTV
             // 
