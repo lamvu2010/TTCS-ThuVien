@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNhapBaoTV));
             System.Windows.Forms.Label iD_BAOLabel;
             System.Windows.Forms.Label sLNHAPLabel;
             System.Windows.Forms.Label lANLabel;
             System.Windows.Forms.Label labelSLTON;
             System.Windows.Forms.Label mABAOLabel1;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNhapBaoTV));
             this.ThuVienDataSet = new ThuVien.ThuVienDataSet();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
@@ -57,18 +57,21 @@
             this.colLAN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSLNHAP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSLTON = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.baoTVGridControl = new DevExpress.XtraGrid.GridControl();
+            this.grid = new DevExpress.XtraGrid.GridControl();
             this.bdsBaoMuon = new System.Windows.Forms.BindingSource(this.components);
             this.BaoMuonTableAdapter = new ThuVien.ThuVienDataSetTableAdapters.BaoMuonTableAdapter();
             this.panelInput = new DevExpress.XtraEditors.PanelControl();
-            this.txtID_BAO = new DevExpress.XtraEditors.TextEdit();
-            this.txtSLNHAP = new DevExpress.XtraEditors.SpinEdit();
-            this.txtLAN = new DevExpress.XtraEditors.SpinEdit();
-            this.btnXacNhan = new System.Windows.Forms.Button();
-            this.btnHuy = new System.Windows.Forms.Button();
-            this.txtSLTON = new DevExpress.XtraEditors.SpinEdit();
-            this.txtMABAO = new DevExpress.XtraEditors.TextEdit();
             this.cmbBao = new System.Windows.Forms.ComboBox();
+            this.txtMABAO = new DevExpress.XtraEditors.TextEdit();
+            this.txtSLTON = new DevExpress.XtraEditors.SpinEdit();
+            this.btnHuy = new System.Windows.Forms.Button();
+            this.btnXacNhan = new System.Windows.Forms.Button();
+            this.txtLAN = new DevExpress.XtraEditors.SpinEdit();
+            this.txtSLNHAP = new DevExpress.XtraEditors.SpinEdit();
+            this.txtID_BAO = new DevExpress.XtraEditors.TextEdit();
+            this.bdsTaiLieu = new System.Windows.Forms.BindingSource(this.components);
+            this.TaiLieuTableAdapter = new ThuVien.ThuVienDataSetTableAdapters.TaiLieuTableAdapter();
+            this.btnTaiLai = new DevExpress.XtraBars.BarButtonItem();
             iD_BAOLabel = new System.Windows.Forms.Label();
             sLNHAPLabel = new System.Windows.Forms.Label();
             lANLabel = new System.Windows.Forms.Label();
@@ -78,16 +81,62 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsBaoTV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.baoTVGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsBaoMuon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelInput)).BeginInit();
             this.panelInput.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtID_BAO.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSLNHAP.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtLAN.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSLTON.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMABAO.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSLTON.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLAN.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSLNHAP.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtID_BAO.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsTaiLieu)).BeginInit();
             this.SuspendLayout();
+            // 
+            // iD_BAOLabel
+            // 
+            iD_BAOLabel.AutoSize = true;
+            iD_BAOLabel.Location = new System.Drawing.Point(82, 71);
+            iD_BAOLabel.Name = "iD_BAOLabel";
+            iD_BAOLabel.Size = new System.Drawing.Size(63, 19);
+            iD_BAOLabel.TabIndex = 2;
+            iD_BAOLabel.Text = "ID Báo:";
+            // 
+            // sLNHAPLabel
+            // 
+            sLNHAPLabel.AutoSize = true;
+            sLNHAPLabel.Location = new System.Drawing.Point(353, 142);
+            sLNHAPLabel.Name = "sLNHAPLabel";
+            sLNHAPLabel.Size = new System.Drawing.Size(119, 19);
+            sLNHAPLabel.TabIndex = 4;
+            sLNHAPLabel.Text = "Số lượng nhập:";
+            // 
+            // lANLabel
+            // 
+            lANLabel.AutoSize = true;
+            lANLabel.Location = new System.Drawing.Point(39, 142);
+            lANLabel.Name = "lANLabel";
+            lANLabel.Size = new System.Drawing.Size(106, 19);
+            lANLabel.TabIndex = 6;
+            lANLabel.Text = "Lần xuất bản:";
+            // 
+            // labelSLTON
+            // 
+            labelSLTON.AutoSize = true;
+            labelSLTON.Location = new System.Drawing.Point(359, 211);
+            labelSLTON.Name = "labelSLTON";
+            labelSLTON.Size = new System.Drawing.Size(107, 19);
+            labelSLTON.TabIndex = 10;
+            labelSLTON.Text = "Số lượng tồn:";
+            // 
+            // mABAOLabel1
+            // 
+            mABAOLabel1.AutoSize = true;
+            mABAOLabel1.Location = new System.Drawing.Point(400, 71);
+            mABAOLabel1.Name = "mABAOLabel1";
+            mABAOLabel1.Size = new System.Drawing.Size(66, 19);
+            mABAOLabel1.TabIndex = 11;
+            mABAOLabel1.Text = "Mã báo:";
             // 
             // ThuVienDataSet
             // 
@@ -109,9 +158,10 @@
             this.btnXoa,
             this.btnSua,
             this.btnThoat,
-            this.btnReset});
+            this.btnReset,
+            this.btnTaiLai});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 5;
+            this.barManager1.MaxItemId = 6;
             this.barManager1.StatusBar = this.bar3;
             // 
             // bar2
@@ -122,8 +172,9 @@
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnThem, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnXoa, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnSua, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnXoa, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnTaiLai, true),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnThoat, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
@@ -249,7 +300,7 @@
             this.colLAN,
             this.colSLNHAP,
             this.colSLTON});
-            this.gridView1.GridControl = this.baoTVGridControl;
+            this.gridView1.GridControl = this.grid;
             this.gridView1.Name = "gridView1";
             // 
             // colID_BAO
@@ -257,6 +308,7 @@
             this.colID_BAO.FieldName = "ID_BAO";
             this.colID_BAO.MinWidth = 30;
             this.colID_BAO.Name = "colID_BAO";
+            this.colID_BAO.OptionsColumn.ReadOnly = true;
             this.colID_BAO.Visible = true;
             this.colID_BAO.VisibleIndex = 0;
             this.colID_BAO.Width = 112;
@@ -266,6 +318,7 @@
             this.colMABAO.FieldName = "MABAO";
             this.colMABAO.MinWidth = 30;
             this.colMABAO.Name = "colMABAO";
+            this.colMABAO.OptionsColumn.ReadOnly = true;
             this.colMABAO.Visible = true;
             this.colMABAO.VisibleIndex = 1;
             this.colMABAO.Width = 112;
@@ -275,6 +328,7 @@
             this.colLAN.FieldName = "LAN";
             this.colLAN.MinWidth = 30;
             this.colLAN.Name = "colLAN";
+            this.colLAN.OptionsColumn.ReadOnly = true;
             this.colLAN.Visible = true;
             this.colLAN.VisibleIndex = 2;
             this.colLAN.Width = 112;
@@ -284,6 +338,7 @@
             this.colSLNHAP.FieldName = "SLNHAP";
             this.colSLNHAP.MinWidth = 30;
             this.colSLNHAP.Name = "colSLNHAP";
+            this.colSLNHAP.OptionsColumn.ReadOnly = true;
             this.colSLNHAP.Visible = true;
             this.colSLNHAP.VisibleIndex = 3;
             this.colSLNHAP.Width = 112;
@@ -293,23 +348,24 @@
             this.colSLTON.FieldName = "SLTON";
             this.colSLTON.MinWidth = 30;
             this.colSLTON.Name = "colSLTON";
+            this.colSLTON.OptionsColumn.ReadOnly = true;
             this.colSLTON.Visible = true;
             this.colSLTON.VisibleIndex = 4;
             this.colSLTON.Width = 112;
             // 
-            // baoTVGridControl
+            // grid
             // 
-            this.baoTVGridControl.DataSource = this.bdsBaoTV;
-            this.baoTVGridControl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.baoTVGridControl.Location = new System.Drawing.Point(0, 34);
-            this.baoTVGridControl.MainView = this.gridView1;
-            this.baoTVGridControl.MenuManager = this.barManager1;
-            this.baoTVGridControl.Name = "baoTVGridControl";
-            this.baoTVGridControl.Size = new System.Drawing.Size(1234, 195);
-            this.baoTVGridControl.TabIndex = 22;
-            this.baoTVGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.grid.DataSource = this.bdsBaoTV;
+            this.grid.Dock = System.Windows.Forms.DockStyle.Top;
+            this.grid.Location = new System.Drawing.Point(0, 34);
+            this.grid.MainView = this.gridView1;
+            this.grid.MenuManager = this.barManager1;
+            this.grid.Name = "grid";
+            this.grid.Size = new System.Drawing.Size(1234, 195);
+            this.grid.TabIndex = 22;
+            this.grid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
-            this.baoTVGridControl.Click += new System.EventHandler(this.baoTVGridControl_Click);
+            this.grid.Click += new System.EventHandler(this.baoTVGridControl_Click);
             // 
             // bdsBaoMuon
             // 
@@ -341,103 +397,25 @@
             this.panelInput.Size = new System.Drawing.Size(1234, 639);
             this.panelInput.TabIndex = 32;
             // 
-            // iD_BAOLabel
+            // cmbBao
             // 
-            iD_BAOLabel.AutoSize = true;
-            iD_BAOLabel.Location = new System.Drawing.Point(82, 71);
-            iD_BAOLabel.Name = "iD_BAOLabel";
-            iD_BAOLabel.Size = new System.Drawing.Size(63, 19);
-            iD_BAOLabel.TabIndex = 2;
-            iD_BAOLabel.Text = "ID Báo:";
+            this.cmbBao.FormattingEnabled = true;
+            this.cmbBao.Location = new System.Drawing.Point(472, 16);
+            this.cmbBao.Name = "cmbBao";
+            this.cmbBao.Size = new System.Drawing.Size(329, 27);
+            this.cmbBao.TabIndex = 13;
+            this.cmbBao.SelectedIndexChanged += new System.EventHandler(this.cmbBao_SelectedIndexChanged);
             // 
-            // txtID_BAO
+            // txtMABAO
             // 
-            this.txtID_BAO.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsBaoTV, "ID_BAO", true));
-            this.txtID_BAO.Location = new System.Drawing.Point(157, 64);
-            this.txtID_BAO.MenuManager = this.barManager1;
-            this.txtID_BAO.Name = "txtID_BAO";
-            this.txtID_BAO.Properties.ReadOnly = true;
-            this.txtID_BAO.Size = new System.Drawing.Size(150, 26);
-            this.txtID_BAO.TabIndex = 3;
-            // 
-            // sLNHAPLabel
-            // 
-            sLNHAPLabel.AutoSize = true;
-            sLNHAPLabel.Location = new System.Drawing.Point(353, 142);
-            sLNHAPLabel.Name = "sLNHAPLabel";
-            sLNHAPLabel.Size = new System.Drawing.Size(119, 19);
-            sLNHAPLabel.TabIndex = 4;
-            sLNHAPLabel.Text = "Số lượng nhập:";
-            // 
-            // txtSLNHAP
-            // 
-            this.txtSLNHAP.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsBaoTV, "SLNHAP", true));
-            this.txtSLNHAP.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.txtSLNHAP.Location = new System.Drawing.Point(472, 138);
-            this.txtSLNHAP.MenuManager = this.barManager1;
-            this.txtSLNHAP.Name = "txtSLNHAP";
-            this.txtSLNHAP.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtSLNHAP.Size = new System.Drawing.Size(150, 28);
-            this.txtSLNHAP.TabIndex = 5;
-            // 
-            // lANLabel
-            // 
-            lANLabel.AutoSize = true;
-            lANLabel.Location = new System.Drawing.Point(39, 142);
-            lANLabel.Name = "lANLabel";
-            lANLabel.Size = new System.Drawing.Size(106, 19);
-            lANLabel.TabIndex = 6;
-            lANLabel.Text = "Lần xuất bản:";
-            // 
-            // txtLAN
-            // 
-            this.txtLAN.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsBaoTV, "LAN", true));
-            this.txtLAN.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.txtLAN.Location = new System.Drawing.Point(157, 138);
-            this.txtLAN.MenuManager = this.barManager1;
-            this.txtLAN.Name = "txtLAN";
-            this.txtLAN.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtLAN.Size = new System.Drawing.Size(150, 28);
-            this.txtLAN.TabIndex = 7;
-            // 
-            // btnXacNhan
-            // 
-            this.btnXacNhan.Location = new System.Drawing.Point(870, 48);
-            this.btnXacNhan.Name = "btnXacNhan";
-            this.btnXacNhan.Size = new System.Drawing.Size(98, 42);
-            this.btnXacNhan.TabIndex = 8;
-            this.btnXacNhan.Text = "Xác nhận";
-            this.btnXacNhan.UseVisualStyleBackColor = true;
-            this.btnXacNhan.Click += new System.EventHandler(this.btnXacNhan_Click);
-            // 
-            // btnHuy
-            // 
-            this.btnHuy.Location = new System.Drawing.Point(870, 124);
-            this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(98, 42);
-            this.btnHuy.TabIndex = 8;
-            this.btnHuy.Text = "Hủy";
-            this.btnHuy.UseVisualStyleBackColor = true;
-            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
-            // 
-            // labelSLTON
-            // 
-            labelSLTON.AutoSize = true;
-            labelSLTON.Location = new System.Drawing.Point(359, 211);
-            labelSLTON.Name = "labelSLTON";
-            labelSLTON.Size = new System.Drawing.Size(107, 19);
-            labelSLTON.TabIndex = 10;
-            labelSLTON.Text = "Số lượng tồn:";
+            this.txtMABAO.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsBaoTV, "MABAO", true));
+            this.txtMABAO.EditValue = "";
+            this.txtMABAO.Location = new System.Drawing.Point(472, 64);
+            this.txtMABAO.MenuManager = this.barManager1;
+            this.txtMABAO.Name = "txtMABAO";
+            this.txtMABAO.Properties.ReadOnly = true;
+            this.txtMABAO.Size = new System.Drawing.Size(329, 26);
+            this.txtMABAO.TabIndex = 12;
             // 
             // txtSLTON
             // 
@@ -455,34 +433,86 @@
             this.txtSLTON.Size = new System.Drawing.Size(150, 28);
             this.txtSLTON.TabIndex = 11;
             // 
-            // mABAOLabel1
+            // btnHuy
             // 
-            mABAOLabel1.AutoSize = true;
-            mABAOLabel1.Location = new System.Drawing.Point(400, 71);
-            mABAOLabel1.Name = "mABAOLabel1";
-            mABAOLabel1.Size = new System.Drawing.Size(66, 19);
-            mABAOLabel1.TabIndex = 11;
-            mABAOLabel1.Text = "Mã báo:";
+            this.btnHuy.Location = new System.Drawing.Point(870, 124);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(98, 42);
+            this.btnHuy.TabIndex = 8;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
-            // txtMABAO
+            // btnXacNhan
             // 
-            this.txtMABAO.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsBaoTV, "MABAO", true));
-            this.txtMABAO.EditValue = "";
-            this.txtMABAO.Location = new System.Drawing.Point(472, 64);
-            this.txtMABAO.MenuManager = this.barManager1;
-            this.txtMABAO.Name = "txtMABAO";
-            this.txtMABAO.Properties.ReadOnly = true;
-            this.txtMABAO.Size = new System.Drawing.Size(329, 26);
-            this.txtMABAO.TabIndex = 12;
+            this.btnXacNhan.Location = new System.Drawing.Point(870, 48);
+            this.btnXacNhan.Name = "btnXacNhan";
+            this.btnXacNhan.Size = new System.Drawing.Size(98, 42);
+            this.btnXacNhan.TabIndex = 8;
+            this.btnXacNhan.Text = "Xác nhận";
+            this.btnXacNhan.UseVisualStyleBackColor = true;
+            this.btnXacNhan.Click += new System.EventHandler(this.btnXacNhan_Click);
             // 
-            // cmbBao
+            // txtLAN
             // 
-            this.cmbBao.FormattingEnabled = true;
-            this.cmbBao.Location = new System.Drawing.Point(472, 16);
-            this.cmbBao.Name = "cmbBao";
-            this.cmbBao.Size = new System.Drawing.Size(329, 27);
-            this.cmbBao.TabIndex = 13;
-            this.cmbBao.SelectedIndexChanged += new System.EventHandler(this.cmbBao_SelectedIndexChanged);
+            this.txtLAN.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsBaoTV, "LAN", true));
+            this.txtLAN.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.txtLAN.Location = new System.Drawing.Point(157, 138);
+            this.txtLAN.MenuManager = this.barManager1;
+            this.txtLAN.Name = "txtLAN";
+            this.txtLAN.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtLAN.Size = new System.Drawing.Size(150, 28);
+            this.txtLAN.TabIndex = 7;
+            // 
+            // txtSLNHAP
+            // 
+            this.txtSLNHAP.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsBaoTV, "SLNHAP", true));
+            this.txtSLNHAP.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.txtSLNHAP.Location = new System.Drawing.Point(472, 138);
+            this.txtSLNHAP.MenuManager = this.barManager1;
+            this.txtSLNHAP.Name = "txtSLNHAP";
+            this.txtSLNHAP.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtSLNHAP.Size = new System.Drawing.Size(150, 28);
+            this.txtSLNHAP.TabIndex = 5;
+            // 
+            // txtID_BAO
+            // 
+            this.txtID_BAO.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsBaoTV, "ID_BAO", true));
+            this.txtID_BAO.Location = new System.Drawing.Point(157, 64);
+            this.txtID_BAO.MenuManager = this.barManager1;
+            this.txtID_BAO.Name = "txtID_BAO";
+            this.txtID_BAO.Properties.ReadOnly = true;
+            this.txtID_BAO.Size = new System.Drawing.Size(150, 26);
+            this.txtID_BAO.TabIndex = 3;
+            // 
+            // bdsTaiLieu
+            // 
+            this.bdsTaiLieu.DataMember = "TaiLieu";
+            this.bdsTaiLieu.DataSource = this.ThuVienDataSet;
+            // 
+            // TaiLieuTableAdapter
+            // 
+            this.TaiLieuTableAdapter.ClearBeforeFill = true;
+            // 
+            // btnTaiLai
+            // 
+            this.btnTaiLai.Caption = "Tải lại";
+            this.btnTaiLai.Id = 5;
+            this.btnTaiLai.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.btnTaiLai.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.btnTaiLai.Name = "btnTaiLai";
+            this.btnTaiLai.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnTaiLai.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTaiLai_ItemClick);
             // 
             // frmNhapBaoTV
             // 
@@ -490,7 +520,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1234, 888);
             this.Controls.Add(this.panelInput);
-            this.Controls.Add(this.baoTVGridControl);
+            this.Controls.Add(this.grid);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
@@ -503,16 +533,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsBaoTV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.baoTVGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsBaoMuon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelInput)).EndInit();
             this.panelInput.ResumeLayout(false);
             this.panelInput.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtID_BAO.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSLNHAP.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtLAN.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSLTON.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMABAO.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSLTON.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLAN.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSLNHAP.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtID_BAO.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsTaiLieu)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -535,7 +566,7 @@
         private System.Windows.Forms.BindingSource bdsBaoTV;
         private ThuVienDataSetTableAdapters.BaoTVTableAdapter BaoTVTableAdapter;
         private ThuVienDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private DevExpress.XtraGrid.GridControl baoTVGridControl;
+        private DevExpress.XtraGrid.GridControl grid;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn colID_BAO;
         private DevExpress.XtraGrid.Columns.GridColumn colMABAO;
@@ -553,5 +584,8 @@
         private DevExpress.XtraEditors.SpinEdit txtSLTON;
         private System.Windows.Forms.ComboBox cmbBao;
         private DevExpress.XtraEditors.TextEdit txtMABAO;
+        private System.Windows.Forms.BindingSource bdsTaiLieu;
+        private ThuVienDataSetTableAdapters.TaiLieuTableAdapter TaiLieuTableAdapter;
+        private DevExpress.XtraBars.BarButtonItem btnTaiLai;
     }
 }
