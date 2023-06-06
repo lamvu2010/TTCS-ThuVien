@@ -218,6 +218,7 @@
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.BaoMuonTableAdapter = null;
+            this.tableAdapterManager.BaoPHTableAdapter = null;
             this.tableAdapterManager.BaoTVTableAdapter = null;
             this.tableAdapterManager.ChiTietTacGiaTableAdapter = null;
             this.tableAdapterManager.Connection = null;
@@ -264,6 +265,7 @@
             this.colID_BAO.FieldName = "ID_BAO";
             this.colID_BAO.MinWidth = 37;
             this.colID_BAO.Name = "colID_BAO";
+            this.colID_BAO.OptionsColumn.ReadOnly = true;
             this.colID_BAO.Visible = true;
             this.colID_BAO.VisibleIndex = 0;
             this.colID_BAO.Width = 137;
@@ -273,6 +275,7 @@
             this.colTUA.FieldName = "TUA";
             this.colTUA.MinWidth = 37;
             this.colTUA.Name = "colTUA";
+            this.colTUA.OptionsColumn.ReadOnly = true;
             this.colTUA.Visible = true;
             this.colTUA.VisibleIndex = 1;
             this.colTUA.Width = 137;
@@ -282,6 +285,7 @@
             this.colLANPH.FieldName = "LANPH";
             this.colLANPH.MinWidth = 37;
             this.colLANPH.Name = "colLANPH";
+            this.colLANPH.OptionsColumn.ReadOnly = true;
             this.colLANPH.Visible = true;
             this.colLANPH.VisibleIndex = 2;
             this.colLANPH.Width = 137;
@@ -291,6 +295,7 @@
             this.colNAMPH.FieldName = "NAMPH";
             this.colNAMPH.MinWidth = 37;
             this.colNAMPH.Name = "colNAMPH";
+            this.colNAMPH.OptionsColumn.ReadOnly = true;
             this.colNAMPH.Visible = true;
             this.colNAMPH.VisibleIndex = 3;
             this.colNAMPH.Width = 137;
@@ -300,6 +305,7 @@
             this.colDINHKY.FieldName = "DINHKY";
             this.colDINHKY.MinWidth = 37;
             this.colDINHKY.Name = "colDINHKY";
+            this.colDINHKY.OptionsColumn.ReadOnly = true;
             this.colDINHKY.Visible = true;
             this.colDINHKY.VisibleIndex = 4;
             this.colDINHKY.Width = 137;
@@ -309,6 +315,7 @@
             this.colNSX.FieldName = "NSX";
             this.colNSX.MinWidth = 37;
             this.colNSX.Name = "colNSX";
+            this.colNSX.OptionsColumn.ReadOnly = true;
             this.colNSX.Visible = true;
             this.colNSX.VisibleIndex = 5;
             this.colNSX.Width = 137;
@@ -318,6 +325,7 @@
             this.colSLTON.FieldName = "SLTON";
             this.colSLTON.MinWidth = 37;
             this.colSLTON.Name = "colSLTON";
+            this.colSLTON.OptionsColumn.ReadOnly = true;
             this.colSLTON.Visible = true;
             this.colSLTON.VisibleIndex = 6;
             this.colSLTON.Width = 137;

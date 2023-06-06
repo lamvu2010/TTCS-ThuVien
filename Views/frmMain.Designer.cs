@@ -43,7 +43,6 @@
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.btnBook = new DevExpress.XtraBars.BarButtonItem();
             this.btnNews = new DevExpress.XtraBars.BarButtonItem();
-            this.btnDocument = new DevExpress.XtraBars.BarButtonItem();
             this.btnBookImport = new DevExpress.XtraBars.BarButtonItem();
             this.btnNewsImport = new DevExpress.XtraBars.BarButtonItem();
             this.btnLibraryBook = new DevExpress.XtraBars.BarButtonItem();
@@ -62,12 +61,9 @@
             this.QuanLyPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.TaiLieuGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.NhapTheoKyGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.SachThuVienGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.QuanLyDocGiaGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.HeThongPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.BRGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ThongKePage = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.TENDANGNHAP = new System.Windows.Forms.ToolStripStatusLabel();
@@ -98,7 +94,6 @@
             this.barButtonItem5,
             this.btnBook,
             this.btnNews,
-            this.btnDocument,
             this.btnBookImport,
             this.btnNewsImport,
             this.btnLibraryBook,
@@ -116,8 +111,7 @@
             this.ribbonPage1,
             this.TraCuuPage,
             this.QuanLyPage,
-            this.HeThongPage,
-            this.ThongKePage});
+            this.HeThongPage});
             this.ribbon.Size = new System.Drawing.Size(1200, 231);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.Click += new System.EventHandler(this.ribbon_Click);
@@ -233,13 +227,6 @@
             this.btnNews.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.btnNews.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNews_ItemClick);
-            // 
-            // btnDocument
-            // 
-            this.btnDocument.Caption = "Tài liệu";
-            this.btnDocument.Id = 20;
-            this.btnDocument.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnDocument.ImageOptions.SvgImage")));
-            this.btnDocument.Name = "btnDocument";
             // 
             // btnBookImport
             // 
@@ -361,7 +348,6 @@
             this.QuanLyPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.TaiLieuGroup,
             this.NhapTheoKyGroup,
-            this.SachThuVienGroup,
             this.QuanLyDocGiaGroup});
             this.QuanLyPage.Name = "QuanLyPage";
             this.QuanLyPage.Text = "Quản lý";
@@ -369,7 +355,6 @@
             // TaiLieuGroup
             // 
             this.TaiLieuGroup.ItemLinks.Add(this.barButtonItem5);
-            this.TaiLieuGroup.ItemLinks.Add(this.btnDocument);
             this.TaiLieuGroup.ItemLinks.Add(this.btnBook);
             this.TaiLieuGroup.ItemLinks.Add(this.btnNews);
             this.TaiLieuGroup.Name = "TaiLieuGroup";
@@ -381,12 +366,6 @@
             this.NhapTheoKyGroup.ItemLinks.Add(this.btnNewsImport);
             this.NhapTheoKyGroup.Name = "NhapTheoKyGroup";
             this.NhapTheoKyGroup.Text = "Nhập theo kỳ";
-            // 
-            // SachThuVienGroup
-            // 
-            this.SachThuVienGroup.ItemLinks.Add(this.btnLibraryBook);
-            this.SachThuVienGroup.Name = "SachThuVienGroup";
-            this.SachThuVienGroup.Text = "Thư viện";
             // 
             // QuanLyDocGiaGroup
             // 
@@ -409,18 +388,6 @@
             this.BRGroup.ItemLinks.Add(this.btnRestore2);
             this.BRGroup.Name = "BRGroup";
             this.BRGroup.Text = "Sao lưu và phục hồi dữ liệu";
-            // 
-            // ThongKePage
-            // 
-            this.ThongKePage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup6});
-            this.ThongKePage.Name = "ThongKePage";
-            this.ThongKePage.Text = "Thống kê";
-            // 
-            // ribbonPageGroup6
-            // 
-            this.ribbonPageGroup6.Name = "ribbonPageGroup6";
-            this.ribbonPageGroup6.Text = "ribbonPageGroup6";
             // 
             // ribbonStatusBar
             // 
@@ -525,10 +492,8 @@
         private DevExpress.XtraBars.BarButtonItem btnBook;
         private DevExpress.XtraBars.BarButtonItem btnNews;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup NhapTheoKyGroup;
-        private DevExpress.XtraBars.BarButtonItem btnDocument;
         private DevExpress.XtraBars.BarButtonItem btnBookImport;
         private DevExpress.XtraBars.BarButtonItem btnNewsImport;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup SachThuVienGroup;
         private DevExpress.XtraBars.BarButtonItem btnLibraryBook;
         private DevExpress.XtraBars.BarButtonItem btnReader;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup QuanLyDocGiaGroup;
@@ -536,8 +501,6 @@
         private DevExpress.XtraBars.BarButtonItem btnRestore;
         private DevExpress.XtraBars.Ribbon.RibbonPage HeThongPage;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup BRGroup;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ThongKePage;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarButtonItem btnRestore2;
     }

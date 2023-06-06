@@ -220,6 +220,7 @@
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.BaoMuonTableAdapter = null;
+            this.tableAdapterManager.BaoPHTableAdapter = null;
             this.tableAdapterManager.BaoTVTableAdapter = null;
             this.tableAdapterManager.ChiTietTacGiaTableAdapter = null;
             this.tableAdapterManager.Connection = null;
@@ -270,6 +271,7 @@
             this.colID_SACH.FieldName = "ID_SACH";
             this.colID_SACH.MinWidth = 45;
             this.colID_SACH.Name = "colID_SACH";
+            this.colID_SACH.OptionsColumn.ReadOnly = true;
             this.colID_SACH.Visible = true;
             this.colID_SACH.VisibleIndex = 0;
             this.colID_SACH.Width = 168;
@@ -279,6 +281,7 @@
             this.colSTT.FieldName = "STT";
             this.colSTT.MinWidth = 45;
             this.colSTT.Name = "colSTT";
+            this.colSTT.OptionsColumn.ReadOnly = true;
             this.colSTT.Visible = true;
             this.colSTT.VisibleIndex = 1;
             this.colSTT.Width = 168;
@@ -288,6 +291,7 @@
             this.colTUA.FieldName = "TUA";
             this.colTUA.MinWidth = 45;
             this.colTUA.Name = "colTUA";
+            this.colTUA.OptionsColumn.ReadOnly = true;
             this.colTUA.Visible = true;
             this.colTUA.VisibleIndex = 2;
             this.colTUA.Width = 168;
@@ -297,6 +301,7 @@
             this.colTACGIA.FieldName = "TACGIA";
             this.colTACGIA.MinWidth = 45;
             this.colTACGIA.Name = "colTACGIA";
+            this.colTACGIA.OptionsColumn.ReadOnly = true;
             this.colTACGIA.Visible = true;
             this.colTACGIA.VisibleIndex = 3;
             this.colTACGIA.Width = 168;
@@ -306,6 +311,7 @@
             this.colLANXB.FieldName = "LANXB";
             this.colLANXB.MinWidth = 45;
             this.colLANXB.Name = "colLANXB";
+            this.colLANXB.OptionsColumn.ReadOnly = true;
             this.colLANXB.Visible = true;
             this.colLANXB.VisibleIndex = 4;
             this.colLANXB.Width = 168;
@@ -315,6 +321,7 @@
             this.colNAM.FieldName = "NAM";
             this.colNAM.MinWidth = 45;
             this.colNAM.Name = "colNAM";
+            this.colNAM.OptionsColumn.ReadOnly = true;
             this.colNAM.Visible = true;
             this.colNAM.VisibleIndex = 5;
             this.colNAM.Width = 168;
@@ -324,6 +331,7 @@
             this.colNHAXB.FieldName = "NHAXB";
             this.colNHAXB.MinWidth = 45;
             this.colNHAXB.Name = "colNHAXB";
+            this.colNHAXB.OptionsColumn.ReadOnly = true;
             this.colNHAXB.Visible = true;
             this.colNHAXB.VisibleIndex = 6;
             this.colNHAXB.Width = 168;
@@ -333,6 +341,7 @@
             this.colCD.FieldName = "CD";
             this.colCD.MinWidth = 45;
             this.colCD.Name = "colCD";
+            this.colCD.OptionsColumn.ReadOnly = true;
             this.colCD.Visible = true;
             this.colCD.VisibleIndex = 7;
             this.colCD.Width = 168;
@@ -342,6 +351,7 @@
             this.colGIA.FieldName = "GIA";
             this.colGIA.MinWidth = 45;
             this.colGIA.Name = "colGIA";
+            this.colGIA.OptionsColumn.ReadOnly = true;
             this.colGIA.Visible = true;
             this.colGIA.VisibleIndex = 8;
             this.colGIA.Width = 168;
@@ -351,6 +361,7 @@
             this.colTINHTRANG.FieldName = "TINHTRANG";
             this.colTINHTRANG.MinWidth = 45;
             this.colTINHTRANG.Name = "colTINHTRANG";
+            this.colTINHTRANG.OptionsColumn.ReadOnly = true;
             this.colTINHTRANG.Visible = true;
             this.colTINHTRANG.VisibleIndex = 9;
             this.colTINHTRANG.Width = 168;
@@ -360,6 +371,7 @@
             this.colMUON.FieldName = "MUON";
             this.colMUON.MinWidth = 45;
             this.colMUON.Name = "colMUON";
+            this.colMUON.OptionsColumn.ReadOnly = true;
             this.colMUON.Visible = true;
             this.colMUON.VisibleIndex = 10;
             this.colMUON.Width = 168;
