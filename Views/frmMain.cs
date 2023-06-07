@@ -376,14 +376,14 @@ namespace ThuVien.Views
 
         private void btnBook_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Form f = this.checkExists(typeof(frmTuaSach));
+            Form f = this.checkExists(typeof(frmQuanLySach));
             if (f != null)
             {
                 f.Activate();
             }
             else
             {
-                f = new frmTuaSach();
+                f = new frmQuanLySach();
                 f.MdiParent = this;
                 f.Show();
             }
