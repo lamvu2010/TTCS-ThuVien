@@ -26,20 +26,20 @@ namespace ThuVien.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ADMIN;Initial Catalog=ThuVien;User ID=THUTHU")]
-        public string ThuVienConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ADMIN;Initial Catalog=ThuVien;User ID=CHUTV")]
+        public string ThuVienConnectionString1 {
             get {
-                return ((string)(this["ThuVienConnectionString"]));
+                return ((string)(this["ThuVienConnectionString1"]));
             }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ADMIN;Initial Catalog=ThuVien;User ID=CHUTV")]
-        public string ThuVienConnectionString1 {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ADMIN;Initial Catalog=ThuVien;User ID=THUTHU")]
+        public string ThuVienConnectionString {
             get {
-                return ((string)(this["ThuVienConnectionString1"]));
+                return ((string)(this["ThuVienConnectionString"]));
             }
         }
         
@@ -51,6 +51,16 @@ namespace ThuVien.Properties {
         public string ThuVienConnectionString2 {
             get {
                 return ((string)(this["ThuVienConnectionString2"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MSI;Initial Catalog=ThuVien;Integrated Security=True")]
+        public string ThuVienConnectionString3 {
+            get {
+                return ((string)(this["ThuVienConnectionString3"]));
             }
         }
     }
