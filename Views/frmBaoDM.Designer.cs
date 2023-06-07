@@ -169,6 +169,7 @@
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.BaoMuonTableAdapter = null;
+            this.tableAdapterManager.BaoPHTableAdapter = null;
             this.tableAdapterManager.BaoTVTableAdapter = null;
             this.tableAdapterManager.ChiTietTacGiaTableAdapter = null;
             this.tableAdapterManager.Connection = null;
@@ -211,6 +212,7 @@
             this.colID_BAO.FieldName = "ID_BAO";
             this.colID_BAO.MinWidth = 30;
             this.colID_BAO.Name = "colID_BAO";
+            this.colID_BAO.OptionsColumn.ReadOnly = true;
             this.colID_BAO.Visible = true;
             this.colID_BAO.VisibleIndex = 0;
             this.colID_BAO.Width = 112;
@@ -220,6 +222,7 @@
             this.colTUA.FieldName = "TUA";
             this.colTUA.MinWidth = 30;
             this.colTUA.Name = "colTUA";
+            this.colTUA.OptionsColumn.ReadOnly = true;
             this.colTUA.Visible = true;
             this.colTUA.VisibleIndex = 1;
             this.colTUA.Width = 112;
@@ -229,6 +232,7 @@
             this.colLANXB.FieldName = "LANXB";
             this.colLANXB.MinWidth = 30;
             this.colLANXB.Name = "colLANXB";
+            this.colLANXB.OptionsColumn.ReadOnly = true;
             this.colLANXB.Visible = true;
             this.colLANXB.VisibleIndex = 2;
             this.colLANXB.Width = 112;
@@ -238,6 +242,7 @@
             this.colNGAYMUON.FieldName = "NGAYMUON";
             this.colNGAYMUON.MinWidth = 30;
             this.colNGAYMUON.Name = "colNGAYMUON";
+            this.colNGAYMUON.OptionsColumn.ReadOnly = true;
             this.colNGAYMUON.Visible = true;
             this.colNGAYMUON.VisibleIndex = 3;
             this.colNGAYMUON.Width = 112;
@@ -247,6 +252,7 @@
             this.colTINHTRANG.FieldName = "TINHTRANG";
             this.colTINHTRANG.MinWidth = 30;
             this.colTINHTRANG.Name = "colTINHTRANG";
+            this.colTINHTRANG.OptionsColumn.ReadOnly = true;
             this.colTINHTRANG.Visible = true;
             this.colTINHTRANG.VisibleIndex = 4;
             this.colTINHTRANG.Width = 112;

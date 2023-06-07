@@ -66,23 +66,23 @@ namespace ThuVien {
         
         private ChiTietSach_TacGiaDataTable tableChiTietSach_TacGia;
         
-        private global::System.Data.DataRelation relationFK_BaoMuon_BaoTV;
-        
         private global::System.Data.DataRelation relationFK_BaoMuon_DocGia;
+        
+        private global::System.Data.DataRelation relationFK_BaoMuon_BaoTV;
         
         private global::System.Data.DataRelation relationFK_BaoPH_TaiLieu;
         
-        private global::System.Data.DataRelation relationFK_VIEW_BAOPH_BaoTV;
-        
         private global::System.Data.DataRelation relationFK_BaoTV_BaoPH;
         
-        private global::System.Data.DataRelation relationFK_ChiTietTacGia_TaiLieu;
+        private global::System.Data.DataRelation relationFK_VIEW_BAOPH_BaoTV;
         
         private global::System.Data.DataRelation relationFK_ChiTietTacGia_TacGia;
         
-        private global::System.Data.DataRelation relationFK_SachMuon_SachTV1;
+        private global::System.Data.DataRelation relationFK_ChiTietTacGia_TaiLieu;
         
         private global::System.Data.DataRelation relationFK_SachMuon_DocGia1;
+        
+        private global::System.Data.DataRelation relationFK_SachMuon_SachTV1;
         
         private global::System.Data.DataRelation relationFK_SachTV_SachXB;
         
@@ -692,21 +692,22 @@ namespace ThuVien {
                     this.tableTaiLieu_Sach.InitVars();
                 }
             }
+
             this.tableChiTietSach_TacGia = ((ChiTietSach_TacGiaDataTable)(base.Tables["ChiTietSach_TacGia"]));
             if ((initTable == true)) {
                 if ((this.tableChiTietSach_TacGia != null)) {
                     this.tableChiTietSach_TacGia.InitVars();
                 }
             }
-            this.relationFK_BaoMuon_BaoTV = this.Relations["FK_BaoMuon_BaoTV"];
             this.relationFK_BaoMuon_DocGia = this.Relations["FK_BaoMuon_DocGia"];
+            this.relationFK_BaoMuon_BaoTV = this.Relations["FK_BaoMuon_BaoTV"];
             this.relationFK_BaoPH_TaiLieu = this.Relations["FK_BaoPH_TaiLieu"];
-            this.relationFK_VIEW_BAOPH_BaoTV = this.Relations["FK_VIEW_BAOPH_BaoTV"];
             this.relationFK_BaoTV_BaoPH = this.Relations["FK_BaoTV_BaoPH"];
-            this.relationFK_ChiTietTacGia_TaiLieu = this.Relations["FK_ChiTietTacGia_TaiLieu"];
+            this.relationFK_VIEW_BAOPH_BaoTV = this.Relations["FK_VIEW_BAOPH_BaoTV"];
             this.relationFK_ChiTietTacGia_TacGia = this.Relations["FK_ChiTietTacGia_TacGia"];
-            this.relationFK_SachMuon_SachTV1 = this.Relations["FK_SachMuon_SachTV1"];
+            this.relationFK_ChiTietTacGia_TaiLieu = this.Relations["FK_ChiTietTacGia_TaiLieu"];
             this.relationFK_SachMuon_DocGia1 = this.Relations["FK_SachMuon_DocGia1"];
+            this.relationFK_SachMuon_SachTV1 = this.Relations["FK_SachMuon_SachTV1"];
             this.relationFK_SachTV_SachXB = this.Relations["FK_SachTV_SachXB"];
             this.relationFK_SachXB_TaiLieu = this.Relations["FK_SachXB_TaiLieu"];
             this.relationFK_TaiLieu_Sach_ChiTietSach_TacGia = this.Relations["FK_TaiLieu_Sach_ChiTietSach_TacGia"];
@@ -763,16 +764,16 @@ namespace ThuVien {
             this.tableChiTietSach_TacGia = new ChiTietSach_TacGiaDataTable();
             base.Tables.Add(this.tableChiTietSach_TacGia);
             global::System.Data.ForeignKeyConstraint fkc;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_BaoMuon_BaoTV", new global::System.Data.DataColumn[] {
-                        this.tableBaoTV.ID_BAOColumn}, new global::System.Data.DataColumn[] {
-                        this.tableBaoMuon.ID_BAOColumn});
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_BaoMuon_DocGia", new global::System.Data.DataColumn[] {
+                        this.tableDocGia.SOTHEColumn}, new global::System.Data.DataColumn[] {
+                        this.tableBaoMuon.SOTHEColumn});
             this.tableBaoMuon.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_BaoMuon_DocGia", new global::System.Data.DataColumn[] {
-                        this.tableDocGia.SOTHEColumn}, new global::System.Data.DataColumn[] {
-                        this.tableBaoMuon.SOTHEColumn});
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_BaoMuon_BaoTV", new global::System.Data.DataColumn[] {
+                        this.tableBaoTV.ID_BAOColumn}, new global::System.Data.DataColumn[] {
+                        this.tableBaoMuon.ID_BAOColumn});
             this.tableBaoMuon.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
@@ -784,13 +785,6 @@ namespace ThuVien {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_VIEW_BAOPH_BaoTV", new global::System.Data.DataColumn[] {
-                        this.tableVIEW_BAOPH.MABAOColumn}, new global::System.Data.DataColumn[] {
-                        this.tableBaoTV.MABAOColumn});
-            this.tableBaoTV.Constraints.Add(fkc);
-            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
-            fkc.DeleteRule = global::System.Data.Rule.None;
-            fkc.UpdateRule = global::System.Data.Rule.Cascade;
             fkc = new global::System.Data.ForeignKeyConstraint("FK_BaoTV_BaoPH", new global::System.Data.DataColumn[] {
                         this.tableBaoPH.MABAOColumn}, new global::System.Data.DataColumn[] {
                         this.tableBaoTV.MABAOColumn});
@@ -798,10 +792,10 @@ namespace ThuVien {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_ChiTietTacGia_TaiLieu", new global::System.Data.DataColumn[] {
-                        this.tableTaiLieu.MAColumn}, new global::System.Data.DataColumn[] {
-                        this.tableChiTietTacGia.MASACHColumn});
-            this.tableChiTietTacGia.Constraints.Add(fkc);
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_VIEW_BAOPH_BaoTV", new global::System.Data.DataColumn[] {
+                        this.tableVIEW_BAOPH.MABAOColumn}, new global::System.Data.DataColumn[] {
+                        this.tableBaoTV.MABAOColumn});
+            this.tableBaoTV.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
@@ -812,16 +806,23 @@ namespace ThuVien {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_SachMuon_SachTV1", new global::System.Data.DataColumn[] {
-                        this.tableSachTV.ID_SACHColumn}, new global::System.Data.DataColumn[] {
-                        this.tableSachMuon.ID_SACHColumn});
-            this.tableSachMuon.Constraints.Add(fkc);
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_ChiTietTacGia_TaiLieu", new global::System.Data.DataColumn[] {
+                        this.tableTaiLieu.MAColumn}, new global::System.Data.DataColumn[] {
+                        this.tableChiTietTacGia.MASACHColumn});
+            this.tableChiTietTacGia.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
             fkc = new global::System.Data.ForeignKeyConstraint("FK_SachMuon_DocGia1", new global::System.Data.DataColumn[] {
                         this.tableDocGia.SOTHEColumn}, new global::System.Data.DataColumn[] {
                         this.tableSachMuon.SOTHEColumn});
+            this.tableSachMuon.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_SachMuon_SachTV1", new global::System.Data.DataColumn[] {
+                        this.tableSachTV.ID_SACHColumn}, new global::System.Data.DataColumn[] {
+                        this.tableSachMuon.ID_SACHColumn});
             this.tableSachMuon.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
@@ -840,6 +841,7 @@ namespace ThuVien {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
+
             fkc = new global::System.Data.ForeignKeyConstraint("FK_TaiLieu_Sach_ChiTietSach_TacGia", new global::System.Data.DataColumn[] {
                         this.tableTaiLieu_Sach.MAColumn}, new global::System.Data.DataColumn[] {
                         this.tableChiTietSach_TacGia.MASACHColumn});
@@ -847,42 +849,43 @@ namespace ThuVien {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.Cascade;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            this.relationFK_BaoMuon_BaoTV = new global::System.Data.DataRelation("FK_BaoMuon_BaoTV", new global::System.Data.DataColumn[] {
-                        this.tableBaoTV.ID_BAOColumn}, new global::System.Data.DataColumn[] {
-                        this.tableBaoMuon.ID_BAOColumn}, false);
-            this.Relations.Add(this.relationFK_BaoMuon_BaoTV);
+           
             this.relationFK_BaoMuon_DocGia = new global::System.Data.DataRelation("FK_BaoMuon_DocGia", new global::System.Data.DataColumn[] {
                         this.tableDocGia.SOTHEColumn}, new global::System.Data.DataColumn[] {
                         this.tableBaoMuon.SOTHEColumn}, false);
             this.Relations.Add(this.relationFK_BaoMuon_DocGia);
+            this.relationFK_BaoMuon_BaoTV = new global::System.Data.DataRelation("FK_BaoMuon_BaoTV", new global::System.Data.DataColumn[] {
+                        this.tableBaoTV.ID_BAOColumn}, new global::System.Data.DataColumn[] {
+                        this.tableBaoMuon.ID_BAOColumn}, false);
+            this.Relations.Add(this.relationFK_BaoMuon_BaoTV);
             this.relationFK_BaoPH_TaiLieu = new global::System.Data.DataRelation("FK_BaoPH_TaiLieu", new global::System.Data.DataColumn[] {
                         this.tableTaiLieu.MAColumn}, new global::System.Data.DataColumn[] {
                         this.tableBaoPH.MABAOColumn}, false);
             this.Relations.Add(this.relationFK_BaoPH_TaiLieu);
-            this.relationFK_VIEW_BAOPH_BaoTV = new global::System.Data.DataRelation("FK_VIEW_BAOPH_BaoTV", new global::System.Data.DataColumn[] {
-                        this.tableVIEW_BAOPH.MABAOColumn}, new global::System.Data.DataColumn[] {
-                        this.tableBaoTV.MABAOColumn}, false);
-            this.Relations.Add(this.relationFK_VIEW_BAOPH_BaoTV);
             this.relationFK_BaoTV_BaoPH = new global::System.Data.DataRelation("FK_BaoTV_BaoPH", new global::System.Data.DataColumn[] {
                         this.tableBaoPH.MABAOColumn}, new global::System.Data.DataColumn[] {
                         this.tableBaoTV.MABAOColumn}, false);
             this.Relations.Add(this.relationFK_BaoTV_BaoPH);
-            this.relationFK_ChiTietTacGia_TaiLieu = new global::System.Data.DataRelation("FK_ChiTietTacGia_TaiLieu", new global::System.Data.DataColumn[] {
-                        this.tableTaiLieu.MAColumn}, new global::System.Data.DataColumn[] {
-                        this.tableChiTietTacGia.MASACHColumn}, false);
-            this.Relations.Add(this.relationFK_ChiTietTacGia_TaiLieu);
+            this.relationFK_VIEW_BAOPH_BaoTV = new global::System.Data.DataRelation("FK_VIEW_BAOPH_BaoTV", new global::System.Data.DataColumn[] {
+                        this.tableVIEW_BAOPH.MABAOColumn}, new global::System.Data.DataColumn[] {
+                        this.tableBaoTV.MABAOColumn}, false);
+            this.Relations.Add(this.relationFK_VIEW_BAOPH_BaoTV);
             this.relationFK_ChiTietTacGia_TacGia = new global::System.Data.DataRelation("FK_ChiTietTacGia_TacGia", new global::System.Data.DataColumn[] {
                         this.tableTacGia.MATGColumn}, new global::System.Data.DataColumn[] {
                         this.tableChiTietTacGia.MATGColumn}, false);
             this.Relations.Add(this.relationFK_ChiTietTacGia_TacGia);
-            this.relationFK_SachMuon_SachTV1 = new global::System.Data.DataRelation("FK_SachMuon_SachTV1", new global::System.Data.DataColumn[] {
-                        this.tableSachTV.ID_SACHColumn}, new global::System.Data.DataColumn[] {
-                        this.tableSachMuon.ID_SACHColumn}, false);
-            this.Relations.Add(this.relationFK_SachMuon_SachTV1);
+            this.relationFK_ChiTietTacGia_TaiLieu = new global::System.Data.DataRelation("FK_ChiTietTacGia_TaiLieu", new global::System.Data.DataColumn[] {
+                        this.tableTaiLieu.MAColumn}, new global::System.Data.DataColumn[] {
+                        this.tableChiTietTacGia.MASACHColumn}, false);
+            this.Relations.Add(this.relationFK_ChiTietTacGia_TaiLieu);
             this.relationFK_SachMuon_DocGia1 = new global::System.Data.DataRelation("FK_SachMuon_DocGia1", new global::System.Data.DataColumn[] {
                         this.tableDocGia.SOTHEColumn}, new global::System.Data.DataColumn[] {
                         this.tableSachMuon.SOTHEColumn}, false);
             this.Relations.Add(this.relationFK_SachMuon_DocGia1);
+            this.relationFK_SachMuon_SachTV1 = new global::System.Data.DataRelation("FK_SachMuon_SachTV1", new global::System.Data.DataColumn[] {
+                        this.tableSachTV.ID_SACHColumn}, new global::System.Data.DataColumn[] {
+                        this.tableSachMuon.ID_SACHColumn}, false);
+            this.Relations.Add(this.relationFK_SachMuon_SachTV1);
             this.relationFK_SachTV_SachXB = new global::System.Data.DataRelation("FK_SachTV_SachXB", new global::System.Data.DataColumn[] {
                         this.tableSachXB.MASACHXBColumn}, new global::System.Data.DataColumn[] {
                         this.tableSachTV.MASACHXBColumn}, false);
@@ -1904,8 +1907,10 @@ namespace ThuVien {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public BaoTVRow AddBaoTVRow(long ID_BAO, VIEW_BAOPHRow parentVIEW_BAOPHRowByFK_VIEW_BAOPH_BaoTV, int LAN, int SLNHAP, int SLTON) {
+
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public BaoTVRow AddBaoTVRow(long ID_BAO, BaoPHRow parentBaoPHRowByFK_BaoTV_BaoPH, int LAN, int SLNHAP, int SLTON) {
+
                 BaoTVRow rowBaoTVRow = ((BaoTVRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID_BAO,
@@ -1913,8 +1918,8 @@ namespace ThuVien {
                         LAN,
                         SLNHAP,
                         SLTON};
-                if ((parentVIEW_BAOPHRowByFK_VIEW_BAOPH_BaoTV != null)) {
-                    columnValuesArray[1] = parentVIEW_BAOPHRowByFK_VIEW_BAOPH_BaoTV[0];
+                if ((parentBaoPHRowByFK_BaoTV_BaoPH != null)) {
+                    columnValuesArray[1] = parentBaoPHRowByFK_BaoTV_BaoPH[0];
                 }
                 rowBaoTVRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowBaoTVRow);
@@ -8021,24 +8026,24 @@ namespace ThuVien {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public BaoTVRow BaoTVRow {
-                get {
-                    return ((BaoTVRow)(this.GetParentRow(this.Table.ParentRelations["FK_BaoMuon_BaoTV"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_BaoMuon_BaoTV"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public DocGiaRow DocGiaRow {
                 get {
                     return ((DocGiaRow)(this.GetParentRow(this.Table.ParentRelations["FK_BaoMuon_DocGia"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_BaoMuon_DocGia"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public BaoTVRow BaoTVRow {
+                get {
+                    return ((BaoTVRow)(this.GetParentRow(this.Table.ParentRelations["FK_BaoMuon_BaoTV"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_BaoMuon_BaoTV"]);
                 }
             }
             
@@ -8206,24 +8211,24 @@ namespace ThuVien {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public VIEW_BAOPHRow VIEW_BAOPHRow {
-                get {
-                    return ((VIEW_BAOPHRow)(this.GetParentRow(this.Table.ParentRelations["FK_VIEW_BAOPH_BaoTV"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_VIEW_BAOPH_BaoTV"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public BaoPHRow BaoPHRow {
                 get {
                     return ((BaoPHRow)(this.GetParentRow(this.Table.ParentRelations["FK_BaoTV_BaoPH"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_BaoTV_BaoPH"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public VIEW_BAOPHRow VIEW_BAOPHRow {
+                get {
+                    return ((VIEW_BAOPHRow)(this.GetParentRow(this.Table.ParentRelations["FK_VIEW_BAOPH_BaoTV"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_VIEW_BAOPH_BaoTV"]);
                 }
             }
             
@@ -8276,24 +8281,24 @@ namespace ThuVien {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TaiLieuRow TaiLieuRow {
-                get {
-                    return ((TaiLieuRow)(this.GetParentRow(this.Table.ParentRelations["FK_ChiTietTacGia_TaiLieu"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_ChiTietTacGia_TaiLieu"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public TacGiaRow TacGiaRow {
                 get {
                     return ((TacGiaRow)(this.GetParentRow(this.Table.ParentRelations["FK_ChiTietTacGia_TacGia"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_ChiTietTacGia_TacGia"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public TaiLieuRow TaiLieuRow {
+                get {
+                    return ((TaiLieuRow)(this.GetParentRow(this.Table.ParentRelations["FK_ChiTietTacGia_TaiLieu"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_ChiTietTacGia_TaiLieu"]);
                 }
             }
         }
@@ -8465,24 +8470,24 @@ namespace ThuVien {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SachTVRow SachTVRow {
-                get {
-                    return ((SachTVRow)(this.GetParentRow(this.Table.ParentRelations["FK_SachMuon_SachTV1"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_SachMuon_SachTV1"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public DocGiaRow DocGiaRow {
                 get {
                     return ((DocGiaRow)(this.GetParentRow(this.Table.ParentRelations["FK_SachMuon_DocGia1"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_SachMuon_DocGia1"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public SachTVRow SachTVRow {
+                get {
+                    return ((SachTVRow)(this.GetParentRow(this.Table.ParentRelations["FK_SachMuon_SachTV1"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_SachMuon_SachTV1"]);
                 }
             }
             
@@ -13885,8 +13890,8 @@ SELECT MASACHXB, LAN, MASACH, NAM, KHOGIAY, SOTRANG, NHAXB, GIA, CD, SLNHAP FROM
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NAMSINH", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NAMSINH", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[TacGia] ([MATG], [TEN], [NAMSINH]) VALUES (@MATG, @TEN, @NAMSI" +
-                "NH);\r\nSELECT MATG, TEN, NAMSINH FROM TacGia WHERE (MATG = @MATG)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[TacGia] ([TEN], [NAMSINH]) VALUES (@TEN, @NAMSINH);\r\nSELECT TE" +
+                "N, NAMSINH FROM TacGia WHERE (MATG = @MATG)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MATG", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MATG", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TEN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TEN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
